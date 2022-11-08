@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- Root Element forecast -->
+	<!-- Contains complex type that contains a sequence of weather elements and has the following attributes: queryTime and queryLocation -->
+	<xsd:element name="forecast">
+	<!-- forecast contains zero or more weather elements -->
+		<xsd:complexType>
+			<xsd:sequence>
+				<!-- element weather also is a complex type which has 
+				the sequence of elements year, month, date, dayOfWeek, overall, overallCode, highest, and lowest-->
+				<!-- Contains an attribute named yyyymmdd -->
+				<xsd:element name="weather" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<!-- year, month, date, dayOfWeek, overall, overallCode, highest, and lowest are simple type -->
+							<xsd:element name="year" type="xsd:integer"/>
+							<!-- Restriction for Month that allow number from 1 - 12 -->
+							<xsd:element name="month">
+								<xsd:simpleType>
+									<xsd:restriction base = "xsd:integer">
+										<xsd:minInclusive value = "1"/>
+										<xsd:maxInclusive value = "12"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<!-- Restriction for Date that allows number from 1 - 31-->
+							<xsd:element name="date">
+								<xsd:simpleType>
+									<xsd:restriction base = "xsd:integer">
+										<xsd:minInclusive value = "1"/>
+										<xsd:maxInclusive value = "31"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="dayOfWeek" type="xsd:string"/>
+							<xsd:element name="overall" type="xsd:string"/>
+							<xsd:element name="overallCode" type="xsd:string"/>
+							<xsd:element name="highest" type="xsd:integer"/>
+							<xsd:element name="lowest" type="xsd:integer"/>
+						</xsd:sequence>
+						
+						<xsd:attribute name = "yyyymmdd" type="xsd:string"/>
+						
+					</xsd:complexType>
+				</xsd:element>
+				
+			</xsd:sequence>
+			
+			<xsd:attribute name="queryTime" type="xsd:string" />
+			<xsd:attribute name="queryLocation" type="xsd:string" />
+			
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

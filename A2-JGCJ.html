@@ -6,7 +6,7 @@
 
             .mainBorder {
                 background-color: whitesmoke;
-                width: 65%;
+                width: 75%;
                 margin-top: 10px;
                 margin: auto;
                 border-style: solid;
@@ -19,11 +19,32 @@
                 border-collapse: collapse;
             }
 
-            th.firstPart {
+            .tableSecondPart {
+                border: 3px solid black;
+                border-collapse: collapse;
+            }
+
+            th.tableFirstPart {
                 padding: 30px;
                 background-color: #82ccdd;
                 text-align: center;
                 font-family: Gotham;
+            }
+
+            th.tableSecondPart {
+                padding: 30px;
+                background-color: #192a56;
+                text-align: center;
+                font-family: Gotham;
+            }
+
+            td.tableFirstPart {
+                text-align: center;
+            }
+
+            td.tableSecondPart {
+                width: 200px;
+                height: 80px;
             }
 
             body {
@@ -48,14 +69,14 @@
             <table class="tableFirstPart" width="70%" height="40%" align="center">
                 <thead>
                     <tr>
-                        <th class="firstPart" width="60%" height="30%" colspan="3">CSIT128: Assignment 2</th>
-                        <th class="firstPart" width="20%">Group T8G24</th>
+                        <th class="tableFirstPart" width="80%" height="40%" colspan="3">CSIT128: Assignment 2</th>
+                        <th class="tableFirstPart" width="20%">Group T8G24</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="background-color: #c8d6e5;">
                     <tr>
                         <!-- Rowspan to combine rows -->
-                        <td rowspan="3" width="20%" align="center">Student Number / Name / Email</td>
+                        <td rowspan="3" width="25%" align="center">Student Number / Name / Email</td>
                         <td class="tableFirstPart">7907795</td>
                         <td class="tableFirstPart">Alexander Willy Johan</td>
                         <td class="tableFirstPart">awj109@uowmail.edu.au</td>
@@ -75,8 +96,49 @@
 
             <h1>Part 2</h1>
 
+            <table class="tableSecondPart" align="center">
+                <thead style="text-align: center">
+                    <tr>
+                        <th class="tableSecondPart" style="color: whitesmoke;" colspan="3" width="600px" height="80px"><b>Part 2: Game</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tableSecondPart"><b>Your chosen number: </b><span id="chosenNumber"></span></td>
+                        <td class="tableSecondPart" style="text-align: center;">
+                            Choose a number: 
+                            <select id = "selectedNumber">
+                                <option value = "0">0</option>
+                                <option value = "1">1</option>
+                                <option value = "2">2</option>
+                                <option value = "3">3</option>
+                                <option value = "4">4</option>
+                                <option value = "5">5</option>
+                                <option value = "6">6</option>
+                                <option value = "7">7</option>
+                                <option value = "8">8</option>
+                                <option value = "9">9</option>
+                            </select>
+                        </td>
+                        <td class="tableSecondPart" style="text-align: center;"><b>Current score: </b><span id="currentScore"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="tableSecondPart" style="background-color: #5f27cd; height: 20px;">
+                            <input type="button" value="Start Game" id="startButton" style="margin-left: 25%;">
+                            <input type="button" value="Stop Game" id="stopButton" style="margin-left: 25%;" disabled="true">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h1>Part 3</h1>
+
         </div>
         
+        <script>
+
+        </script>
+
     </body>
     
 </html>
